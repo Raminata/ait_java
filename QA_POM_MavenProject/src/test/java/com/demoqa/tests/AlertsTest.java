@@ -10,13 +10,25 @@ public class AlertsTest extends TestBase {
 
     @BeforeMethod
     public void precondition() {
-        new HomePage(driver).getAlertsFrameWindows();
-        new SidePenel(driver).selectAlerts();
+        new HomePage(driver)
+                .getAlertsFrameWindows();
+
+        new SidePenel(driver)
+                .selectAlerts();
     }
 
     @Test
     public void sentMessageToAlertTest() {
-        new AlertPage(driver).sendMessageToAlert("Hello world!")
+        new AlertPage(driver)
+                .sendMessageToAlert("Hello world!")
                 .assertMessage("Hello world!");
+    }
+
+    @Test
+    public void click5SecondsAlertDelayTest() {
+        new AlertPage(driver)
+                .click5SecondsAlertButton()
+                .wait5Seconds()
+                .assertAlert5Second();
     }
 }

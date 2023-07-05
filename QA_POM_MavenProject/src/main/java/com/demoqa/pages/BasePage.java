@@ -36,7 +36,7 @@ public abstract class BasePage {
 
     }
 
-    public void pause(int millis) {
+    public void pause(long millis) {
         try {
             Thread.sleep(millis);
         } catch (InterruptedException e) {
