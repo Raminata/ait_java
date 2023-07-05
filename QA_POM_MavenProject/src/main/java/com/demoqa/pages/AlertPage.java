@@ -59,4 +59,23 @@ public class AlertPage extends BasePage {
         Assert.assertNotNull(alert);
         return this;
     }
+
+    @FindBy(id = "alertButton")
+    WebElement alertButton;
+
+    public AlertPage clickOnAlertButton() {
+        click(alertButton);
+        return this;
+    }
+
+    public AlertPage assertAlert() {
+        Alert alert = driver.switchTo().alert();
+
+        if (alert != null) {
+            alert.accept();
+        }
+
+        Assert.assertNotNull(alert);
+        return this;
+    }
 }

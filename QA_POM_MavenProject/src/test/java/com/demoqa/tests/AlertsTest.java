@@ -25,10 +25,17 @@ public class AlertsTest extends TestBase {
     }
 
     @Test
-    public void click5SecondsAlertDelayTest() {
+    public void clickAlertTest() {
         new AlertPage(driver)
                 .click5SecondsAlertButton()
                 .wait5Seconds()
                 .assertAlert5Second();
+    }
+
+    @Test
+    public void click5SecondsAlertDelayTest() {
+        new AlertPage(driver)
+                .clickOnAlertButton()
+                .assertAlert();
     }
 }
