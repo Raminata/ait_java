@@ -78,4 +78,24 @@ public class AlertPage extends BasePage {
         Assert.assertNotNull(alert);
         return this;
     }
+
+    @FindBy(id = "confirmButton")
+    WebElement confirmButton;
+
+    public AlertPage clickOnConfirmButton() {
+        click(confirmButton);
+
+        driver.switchTo().alert().accept();
+
+        return this;
+    }
+
+    @FindBy(id = "confirmResult")
+    WebElement confirmResult;
+
+    public AlertPage assertConfirmPrompt() {
+        Assert.assertTrue(confirmResult.getText().contains("Ok"));
+        return this;
+    }
+
 }

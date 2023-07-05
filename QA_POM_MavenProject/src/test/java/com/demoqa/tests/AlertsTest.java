@@ -38,4 +38,12 @@ public class AlertsTest extends TestBase {
                 .clickOnAlertButton()
                 .assertAlert();
     }
+
+    @Test
+    public void clickConfirmTest() {
+        new AlertPage(driver)
+                .clickOnConfirmButton()
+                .assertConfirmPrompt();
+    }
+
 }
